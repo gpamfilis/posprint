@@ -36,7 +36,7 @@ def create_deltio():
         head = 20
         left = 40
         back_ground_color = (255, 255, 255)
-        font_size = 15
+        font_size = 25
         font_color = (0, 0, 0)
         im = Image.new("RGB", (width, height), back_ground_color)
         unicode_font = ImageFont.truetype('./fonts/arial.ttf', font_size)
@@ -46,7 +46,7 @@ def create_deltio():
         draw = ImageDraw.Draw(im)
 
         draw.text((20+left, head), items[0]["table_name"], font=unicode_font, fill=font_color)
-        draw.text((60+left, head), items[0]["datetime"], font=date_font, fill=font_color)
+        # draw.text((60+left, head), items[0]["datetime"], font=date_font, fill=font_color)
         draw.text((250+left, head), str(i), font=date_font, fill=font_color)
         gap = h/(n_orders*3)
         # draw.text((10, 0+gap), " ", font=unicode_font, fill=font_color)
