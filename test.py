@@ -36,7 +36,7 @@ def create_deltio():
         head = 20
         left = 40
         back_ground_color = (255, 255, 255)
-        font_size = 25
+        font_size = 30
         font_color = (0, 0, 0)
         im = Image.new("RGB", (width, height), back_ground_color)
         unicode_font = ImageFont.truetype('./fonts/arial.ttf', font_size)
@@ -55,7 +55,7 @@ def create_deltio():
         for item in items:
             name = item["name"]
             print(name)
-            draw.text((20+left, 2*head + d_line), "x" + str(item["quantity"]) + " " + name[:14], font=unicode_font, fill=font_color)
+            draw.text((20+left, 2*head + d_line), "x" + str(item["quantity"]) + " " + name[:10], font=unicode_font, fill=font_color)
             d_line += gap
         im.save("./orders_pic/id_"+str(i)+"_text.png")
 
