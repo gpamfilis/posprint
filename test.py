@@ -30,7 +30,7 @@ def create_deltio():
 
         n_orders = len(items)
         print(n_orders)
-        width = 384
+        width = 350
         height = 50 * (n_orders+3)
         h = 50 * n_orders*3
         head = 20
