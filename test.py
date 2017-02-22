@@ -48,7 +48,7 @@ def create_deltio():
         draw.text((10, 0), items[0]["table_name"], font=unicode_font, fill=font_color)
         draw.text((50, 5), items[0]["datetime"], font=date_font, fill=font_color)
         gap = h/(n_orders*4)
-        # draw.text((10, 0+gap), "Table Name", font=unicode_font, fill=font_color)
+        # draw.text((10, 0+gap), "Table Ndame", font=unicode_font, fill=font_color)
 
         d_line = font_size  # +(gap*1)
         for item in items:
