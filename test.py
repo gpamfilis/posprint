@@ -22,8 +22,8 @@ def create_deltio():
 
     ids = get_orders_to_print()
 
-    # for i in ids:
-    for i in [22]:
+    for i in ids:
+    # for i in [22]:
         json = get_order(i)
 
         items = json["items"]
