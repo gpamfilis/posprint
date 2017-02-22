@@ -30,7 +30,7 @@ def create_deltio():
 
         n_orders = len(items)
         print(n_orders)
-        width = 300
+        width = 384
         height = 50 * (n_orders+1)
         h = 50 * n_orders*3
         head = 20
@@ -39,7 +39,7 @@ def create_deltio():
         font_color = (0, 0, 0)
         im = Image.new("RGB", (width, height), back_ground_color)
         unicode_font = ImageFont.truetype('./fonts/arial.ttf', font_size)
-        date_font = ImageFont.truetype('./fonts/arial.ttf', 20)
+        date_font = ImageFont.truetype('./fonts/arial.ttf', font_size)
 
         items = json["items"]
         draw = ImageDraw.Draw(im)
