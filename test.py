@@ -37,7 +37,7 @@ def create_deltio():
         h = 50 * n_orders*3
 
         back_ground_color = (255, 255, 255)
-        font_size = 20
+        font_size = 30
         font_color = (0, 0, 0)
         im = Image.new("RGB", (width, height), back_ground_color)
         unicode_font = ImageFont.truetype('./fonts/arial.ttf', font_size)
