@@ -20,7 +20,7 @@ def create_deltio(order_id):
     n_orders = len(items)
     print(n_orders)
     width = 350
-    height = 50 * n_orders
+    height = 50 * (n_orders+1)
     h = 50 * n_orders*3
 
     back_ground_color = (255, 255, 255)
@@ -43,5 +43,5 @@ def create_deltio(order_id):
 
 
 if __name__ == '__main__':
-    create_deltio(1)
+    create_deltio(10)
 
