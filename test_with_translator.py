@@ -20,14 +20,18 @@ def create_deltio():
     ids = get_orders_to_print()
     for i in ids:
         print(i, len(ids))
-        json = get_order(i)
+        try:
+            json = get_order(i)
+        except Exception, e:
+            print(e+"dsfsdfsadfsa")
+
         f = open("./order_txt/id_" + str(i) + "text.txt", "w")
         items = json["items"]
         table_name = items[0]["table_name"]
         f.write(table_name + "  " + items[0]["datetime"])
         f.write("\n")
         for item in items:
-            name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))
+            name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
             f.write(name)
             f.write("\n")
             if len(item["contents"]) == 0:

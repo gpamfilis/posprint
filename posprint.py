@@ -15,5 +15,5 @@ if __name__ == '__main__':
         lines = f.readlines()
         f.close()
         for line in lines:
-            p.print_text(line)
+            p.print_text(line[:])
         p.linefeed(5)
