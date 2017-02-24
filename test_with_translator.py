@@ -35,5 +35,4 @@ def create_deltio():
         f.close()
 
 if __name__ == '__main__':
-
     create_deltio()
