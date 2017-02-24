@@ -12,7 +12,7 @@ if __name__ == '__main__':
     p = thermal.ThermalPrinter(serialport=serial_port)
     for fil in os.listdir("./order_txt"):
         f = open("./order_txt/"+fil)
-        lines = f.readline()
+        lines = f.readlines()
         f.close()
         for line in lines:
             p.print_text(line)
