@@ -1,4 +1,16 @@
 T1  2017-01-02 03:55:00
 x1 FRANGELICO
+    cheese
+    cheese
+    cheese
+    cheese
 x2 AMSTEL
+    cheese
+    cheese
+    cheese
+    cheese
 x1 TEQUILA LEYKH
+    cheese
+    cheese
+    cheese
+    cheese

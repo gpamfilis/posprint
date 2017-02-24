@@ -1,3 +1,11 @@
 T7  2017-01-01 05:00:00
 x2 HEINEKEN
+    cheese
+    cheese
+    cheese
+    cheese
 x1 COCA COLA
+    cheese
+    cheese
+    cheese
+    cheese

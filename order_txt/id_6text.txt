@@ -1,6 +1,26 @@
 T10  2017-01-01 05:40:00
 x2 ROLAKIA MELITZANAS
+    cheese
+    cheese
+    cheese
+    cheese
 x1 STOLICHNAYA
+    cheese
+    cheese
+    cheese
+    cheese
 x1 TEQUILA KITRINH
+    cheese
+    cheese
+    cheese
+    cheese
 x1 AMSTEL
+    cheese
+    cheese
+    cheese
+    cheese
 x2 NERO 1 LIT.
+    cheese
+    cheese
+    cheese
+    cheese

@@ -1,6 +1,26 @@
 T4  2017-01-02 02:20:00
 x2 GKAZOZA
+    cheese
+    cheese
+    cheese
+    cheese
 x1 HEINEKEN
+    cheese
+    cheese
+    cheese
+    cheese
 x2 NERO 1 LIT.
+    cheese
+    cheese
+    cheese
+    cheese
 x2 JOHNNIE WALKER
+    cheese
+    cheese
+    cheese
+    cheese
 x1 ABSOLUT
+    cheese
+    cheese
+    cheese
+    cheese
