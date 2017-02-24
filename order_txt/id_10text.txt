@@ -1,6 +1,2 @@
 T1  2017-01-01 11:21:00
 x1 LEYKO KRASI 500ML
-    cheese
-    cheese
-    cheese
-    cheese

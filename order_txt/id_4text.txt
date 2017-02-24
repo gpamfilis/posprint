@@ -1,21 +1,5 @@
 T4  2017-01-01 04:04:00
 x1 XYMOS PORTOKALI
-    cheese
-    cheese
-    cheese
-    cheese
 x2 KAPNISTH PANSETA BARBEQUE
-    cheese
-    cheese
-    cheese
-    cheese
 x1 APAKI KOTOPOYLO
-    cheese
-    cheese
-    cheese
-    cheese
 x1 MPYRAL
-    cheese
-    cheese
-    cheese
-    cheese

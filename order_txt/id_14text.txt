@@ -1,26 +1,6 @@
 T10  2017-01-01 15:57:00
 x2 KOYPAKI
-    cheese
-    cheese
-    cheese
-    cheese
 x2 TSILILI LEYKO
-    cheese
-    cheese
-    cheese
-    cheese
 x1 KANATA
-    cheese
-    cheese
-    cheese
-    cheese
 x2 FRANGELICO
-    cheese
-    cheese
-    cheese
-    cheese
 x1 TZATZIKI
-    cheese
-    cheese
-    cheese
-    cheese

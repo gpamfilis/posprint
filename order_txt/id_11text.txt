@@ -1,26 +1,6 @@
 T3  2017-01-01 12:45:00
 x1 KAPNISTH PANSETA BARBEQUE
-    cheese
-    cheese
-    cheese
-    cheese
 x2 KOKKINO KRASI 500ML
-    cheese
-    cheese
-    cheese
-    cheese
 x2 MPYRAL
-    cheese
-    cheese
-    cheese
-    cheese
 x2 HEINEKEN
-    cheese
-    cheese
-    cheese
-    cheese
 x2 CUTTY SARK
-    cheese
-    cheese
-    cheese
-    cheese

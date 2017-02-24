@@ -1,31 +1,7 @@
 T5  2017-01-02 03:26:00
 x2 CHTO XALOYMI
-    cheese
-    cheese
-    cheese
-    cheese
 x1 TZATZIKI
-    cheese
-    cheese
-    cheese
-    cheese
 x2 FISHER
-    cheese
-    cheese
-    cheese
-    cheese
 x1 ABSOLUT
-    cheese
-    cheese
-    cheese
-    cheese
 x1 PORTOKALADA
-    cheese
-    cheese
-    cheese
-    cheese
 x2 TEQUILA KITRINH
-    cheese
-    cheese
-    cheese
-    cheese
