@@ -5,6 +5,7 @@ __author__ = 'gpamfilis'
 
 pnc = PrinterNetCalls()
 
+
 def create_deltio():
     ids = pnc.get_orders_to_print()
     for i in ids:
