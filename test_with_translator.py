@@ -1,29 +1,19 @@
 import requests
 import greeklish
-
+from network import PrinterNetCalls
 __author__ = 'gpamfilis'
 
-
-def get_order(order_id):
-    data = requests.get("http://www.e-orders.org/api/app/order?order_id=" + str(order_id))
-    json = data.json()
-    return json
-
-
-def get_orders_to_print():
-    data = requests.get("http://www.e-orders.org/api/printer/orders-print?store_id=" + str(1))
-    json = data.json()["ids"]
-    return json
-
+pnc = PrinterNetCalls()
 
 def create_deltio():
-    ids = get_orders_to_print()
+    ids = pnc.get_orders_to_print()
     for i in ids:
         print(i, len(ids))
         try:
-            json = get_order(i)
+            json = pnc.get_order(i)
         except Exception, e:
-            print(e+"dsfsdfsadfsa")
+            print(e)
+            continue
 
         f = open("./order_txt/id_" + str(i) + "text.txt", "w")
         items = json["items"]
@@ -45,4 +35,5 @@ def create_deltio():
         f.close()
 
 if __name__ == '__main__':
+
     create_deltio()

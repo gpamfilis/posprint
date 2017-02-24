@@ -2,6 +2,7 @@ __author__ = 'gpamfilis'
 
 import thermal
 
+
 if __name__ == '__main__':
     import sys, os
     if len(sys.argv) == 2:
