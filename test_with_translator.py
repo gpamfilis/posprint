@@ -19,7 +19,9 @@ def create_deltio():
         f = open("./order_txt/id_" + str(i) + "text.txt", "w")
         items = json["items"]
         table_name = items[0]["table_name"]
-        f.write(table_name + "  " + items[0]["datetime"] + "  " + str(i))
+        f.write(table_name + "  " + items[0]["datetime"])
+        f.write("\n")
+        f.write(str(i))
         f.write("\n")
         for item in items:
             name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
