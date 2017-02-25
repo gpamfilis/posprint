@@ -406,4 +406,57 @@ if __name__ == '__main__':
     p = ThermalPrinter(serialport=serialport)
     print(p.has_paper())
     p.print_text("dicks with makaroni")
+    p.print_text("\nHello maailma. How's it going?\n")
+    p.print_text("Part of this ")
+    p.bold()
+    p.print_text("line is bold\n")
+    p.bold(False)
+    p.print_text("Part of this ")
+    p.font_b()
+    p.print_text("line is fontB\n")
+    p.font_b(False)
+    p.justify("R")
+    p.print_text("right justified\n")
+    p.justify("C")
+    p.print_text("centered\n")
+    p.justify()  # justify("L") works too
+    p.print_text("left justified\n")
+    p.upsidedown()
+    p.print_text("upside down\n")
+    p.upsidedown(False)
+
+    markup = """bl bold left
+    ur underline right
+    fc font b centred (next line blank)
+    nl
+    il inverse left
+    """
+    p.print_markup(markup)
     print(p.has_printed())
+
+    p.print_text("\nHello maailma. How's it going?\n")
+    p.print_text("Part of this ")
+    p.bold()
+    p.print_text("line is bold\n")
+    p.bold(False)
+    p.print_text("Part of this ")
+    p.font_b()
+    p.print_text("line is fontB\n")
+    p.font_b(False)
+    p.justify("R")
+    p.print_text("right justified\n")
+    p.justify("C")
+    p.print_text("centered\n")
+    p.justify()  # justify("L") works too
+    p.print_text("left justified\n")
+    p.upsidedown()
+    p.print_text("upside down\n")
+    p.upsidedown(False)
+
+    markup = """bl bold left
+    ur underline right
+    fc font b centred (next line blank)
+    nl
+    il inverse left
+    """
+    p.print_markup(markup)
