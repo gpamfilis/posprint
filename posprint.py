@@ -2,9 +2,12 @@ __author__ = 'gpamfilis'
 
 import thermal
 import time
+from network import PrinterNetCalls
+
 
 if __name__ == '__main__':
     import sys, os
+    pnc = PrinterNetCalls()
     if len(sys.argv) == 2:
         serial_port = sys.argv[1]
     else:
@@ -19,5 +22,6 @@ if __name__ == '__main__':
             p.print_text(line[:])
         status = p.has_printed()
         # p.linefeed(3)
+        pnc.post_that_order_was_printed(fil[3:5])
         print(status)
         time.sleep(2)

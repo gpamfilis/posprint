@@ -29,5 +29,10 @@ class PrinterNetCalls:
         return json
 
 
+    def post_that_order_was_printed(self, order_id):
+        print("printed!! ", order_id)
+        return None
+
+
 if __name__ == '__main__':
     pass
