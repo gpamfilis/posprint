@@ -33,9 +33,12 @@ if __name__ == '__main__':
                     print("reprinting...", lines)
                     time.sleep(5)
                     p.print_text("REPRINTING")
+                    p.linefeed(1)
                     for line in lines:
                         p.print_text(line[:])
                     p.linefeed(5)
+                    break
+                else:
                     break
                 break
 
