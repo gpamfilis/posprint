@@ -3,21 +3,29 @@ import greeklish
 from network import PrinterNetCalls
 __author__ = 'gpamfilis'
 import os
-pnc = PrinterNetCalls()
 import shutil
+
+def empty_directory(folder):
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+            #elif os.path.isdir(file_path): shutil.rmtree(file_path)
+        except Exception as e:
+            print(e)
+
+pnc = PrinterNetCalls()
+
 
 def create_deltio():
     ids = pnc.get_orders_to_print()
     if os.path.exists("./order_txt/"):
+        print("yes")
+        empty_directory('./order_txt')
+    else:
         print("not")
         os.mkdir("order_txt")
-        shutil.rmtree('order_txt')
-    else:
-        print("yes")
-        shutil.rmtree('order_txt')
-        os.mkdir("order_txt")
-        #
-
 
     for i in ids:
         print(i, len(ids))
