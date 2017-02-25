@@ -17,7 +17,7 @@ if __name__ == '__main__':
         f.close()
         for line in lines:
             p.print_text(line[:])
-            status = p.has_printed()
+        status = p.has_printed()
         # p.linefeed(3)
         print(status)
         time.sleep(2)
