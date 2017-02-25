@@ -14,7 +14,7 @@ def create_deltio():
         shutil.rmtree('./order_txt/')
     else:
         print("yes")
-        shutil.rmtree('./order_txt/')
+        shutil.rmtree('./order_txt')
         os.mkdir("order_txt")
         #
 
