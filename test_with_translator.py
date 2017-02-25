@@ -8,7 +8,7 @@ import shutil
 
 def create_deltio():
     ids = pnc.get_orders_to_print()
-    if os.path.exists(".order_txt/"):
+    if os.path.exists("/order_txt/"):
         print("not")
         os.mkdir("order_txt")
         shutil.rmtree('order_txt')
