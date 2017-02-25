@@ -21,10 +21,15 @@ if __name__ == '__main__':
         for line in lines:
             p.print_text(line[:])
             paper_status = p.has_paper()
+            print("the paper status is:", paper_status)
             while paper_status == False:
                 print("waiting for paper...")
                 paper_status = p.has_paper()
                 time.sleep(3)
+            p.linefeed(4)
+            p.print_text("REPRINTING")
+            for line in lines:
+                p.print_text(line[:])
 
         p.linefeed(5)
         printer_status = p.has_printed()
