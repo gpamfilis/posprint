@@ -146,6 +146,20 @@ class ThermalPrinter(object):
             sleep(0.01)
         return not bool(status & 0b00000100)
 
+    def has_printed(self):
+        # Check the status of the paper using the printer's self reporting
+        # ability. SerialTX _must_ be connected!
+        status = -1
+        self.printer.write(self._ESC)
+        self.printer.write(chr(117))
+        self.printer.write(chr(0))
+        for i in range(0, 9):
+            if self.printer.inWaiting():
+                status = unpack('b', self.printer.read())[0]
+                break
+            sleep(0.01)
+        return not bool(status & 0b00000100)
+
     def reset(self):
         self.printer.write(self._ESC)
         self.printer.write(chr(64))
@@ -391,3 +405,5 @@ if __name__ == '__main__':
     print "Testing printer on port %s" % serialport
     p = ThermalPrinter(serialport=serialport)
     print(p.has_paper())
+    p.print_text("dicks with makaroni")
+    print(p.has_printed())
