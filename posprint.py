@@ -20,6 +20,7 @@ if __name__ == '__main__':
         f.close()
         for line in lines:
             p.print_text(line[:])
+        p.linefeed(5)
         status = p.has_printed()
         # p.linefeed(3)
         pnc.post_that_order_was_printed(fil.split("_")[1])
