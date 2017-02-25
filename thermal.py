@@ -390,4 +390,4 @@ if __name__ == '__main__':
 
     print "Testing printer on port %s" % serialport
     p = ThermalPrinter(serialport=serialport)
-    p.has_paper()
+    print(p.has_paper())
