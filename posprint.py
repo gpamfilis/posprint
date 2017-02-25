@@ -24,26 +24,24 @@ if __name__ == '__main__':
             print("the paper status is:", paper_status)
 
             while paper_status == False:
-                print("waiting for paper...")
+                print("Waiting for paper...")
                 paper_status = p.has_paper()
                 time.sleep(3)
                 if paper_status:
                     time.sleep(5)
                     p.linefeed(4)
+                    print("reprinting...")
                     p.print_text("REPRINTING")
                     for line in lines:
                         p.print_text(line[:])
                     p.linefeed(5)
-                break
+                    break
 
         p.linefeed(5)
         printer_status = p.has_printed()
-        # p.linefeed(3)
-
-        print(printer_status)
-        while printer_status==False:
+        while printer_status == False:
             printer_status = p.has_printed()
-            print("Waiting...")
-            time.sleep(1)
+            print("Waiting for the printer to complete...")
+            time.sleep(3)
         pnc.post_that_order_was_printed(fil.split("_")[1])
         time.sleep(4)
