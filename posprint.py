@@ -24,4 +24,7 @@ if __name__ == '__main__':
         # p.linefeed(3)
         pnc.post_that_order_was_printed(fil.split("_")[1])
         print(status)
-        time.sleep(2)
+        while status==False:
+            print("Waiting...")
+            time.sleep(1)
+        time.sleep(4)
