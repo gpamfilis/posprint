@@ -133,7 +133,7 @@ class ThermalPrinter(object):
         self.printer.write(chr(0))
 
     def has_paper(self):
-        # Check the status of the paper using the printer's self reporting
+        # Check the printer_status of the paper using the printer's self reporting
         # ability. SerialTX _must_ be connected!
         status = -1
         self.printer.write(self._ESC)
@@ -147,7 +147,7 @@ class ThermalPrinter(object):
         return not bool(status & 0b00000100)
 
     def has_printed(self):
-        # Check the status of the paper using the printer's self reporting
+        # Check the printer_status of the paper using the printer's self reporting
         # ability. SerialTX _must_ be connected!
         status = -1
         self.printer.write(self._ESC)

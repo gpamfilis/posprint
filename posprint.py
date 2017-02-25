@@ -20,13 +20,19 @@ if __name__ == '__main__':
         f.close()
         for line in lines:
             p.print_text(line[:])
+            paper_status = p.has_paper()
+            while paper_status == False:
+                print("waiting for paper...")
+                paper_status = p.has_paper()
+                time.sleep(3)
+
         p.linefeed(5)
-        status = p.has_printed()
+        printer_status = p.has_printed()
         # p.linefeed(3)
 
-        print(status)
-        while status==False:
-            status = p.has_printed()
+        print(printer_status)
+        while printer_status==False:
+            printer_status = p.has_printed()
             print("Waiting...")
             time.sleep(1)
         pnc.post_that_order_was_printed(fil.split("_")[1])
