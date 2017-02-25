@@ -30,12 +30,13 @@ if __name__ == '__main__':
                 if paper_status:
                     time.sleep(5)
                     p.linefeed(4)
-                    print("reprinting...")
+                    print("reprinting...", lines)
+                    time.sleep(5)
                     p.print_text("REPRINTING")
                     for line in lines:
                         p.print_text(line[:])
                     p.linefeed(5)
-                break
+                    break
 
         p.linefeed(5)
         printer_status = p.has_printed()
