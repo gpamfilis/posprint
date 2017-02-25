@@ -22,6 +22,6 @@ if __name__ == '__main__':
             p.print_text(line[:])
         status = p.has_printed()
         # p.linefeed(3)
-        pnc.post_that_order_was_printed(fil[3:5])
+        pnc.post_that_order_was_printed(fil.split("_")[1])
         print(status)
         time.sleep(2)
