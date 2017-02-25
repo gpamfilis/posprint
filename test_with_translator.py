@@ -11,10 +11,10 @@ def create_deltio():
     if os.path.exists(".order_txt/"):
         print("not")
         os.mkdir("order_txt")
-        shutil.rmtree('./order_txt/')
+        shutil.rmtree('order_txt')
     else:
         print("yes")
-        shutil.rmtree('./order_txt')
+        shutil.rmtree('order_txt')
         os.mkdir("order_txt")
         #
 
