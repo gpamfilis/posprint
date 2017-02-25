@@ -23,28 +23,28 @@ if __name__ == '__main__':
             paper_status = p.has_paper()
             print("the paper status is:", paper_status)
 
-            # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
-            # full previous items.
-            if paper_status==False:
-                while paper_status == False:
-                    print("Waiting for paper...")
-                    paper_status = p.has_paper()
-                    time.sleep(3)
-                    if paper_status:
-                        break
-                    else:
-                        time.sleep(5)
-                        p.linefeed(4)
-                        print("reprinting...", lines)
-                        time.sleep(5)
-                        p.print_text("REPRINTING")
-                        p.linefeed(1)
-                        for line in lines:
-                            p.print_text(line[:])
-                        p.linefeed(5)
-                        break
-            else:
-                pass
+            # # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
+            # # full previous items.
+            # if paper_status==False:
+            #     while paper_status == False:
+            #         print("Waiting for paper...")
+            #         paper_status = p.has_paper()
+            #         time.sleep(3)
+            #         if paper_status:
+            #             break
+            #         else:
+            #             time.sleep(5)
+            #             p.linefeed(4)
+            #             print("reprinting...", lines)
+            #             time.sleep(5)
+            #             p.print_text("REPRINTING")
+            #             p.linefeed(1)
+            #             for line in lines:
+            #                 p.print_text(line[:])
+            #             p.linefeed(5)
+            #             break
+            # else:
+            #     pass
 
 
 
