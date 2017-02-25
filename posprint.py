@@ -1,7 +1,7 @@
 __author__ = 'gpamfilis'
 
 import thermal
-
+import time
 
 if __name__ == '__main__':
     import sys, os
@@ -17,4 +17,7 @@ if __name__ == '__main__':
         f.close()
         for line in lines:
             p.print_text(line[:])
-        p.linefeed(5)
+            status = p.has_printed()
+        # p.linefeed(3)
+        print(status)
+        time.sleep(2)

@@ -433,10 +433,10 @@ if __name__ == '__main__':
     """
     p.print_markup(markup)
 
-    n=0
+    n = 0
     while p.has_printed() == False:
-        print(False,n)
-        n+=1
+        print(False, n)
+        n += 1
 
     p.print_text("\nHello maailma. How's it going?\n")
     p.print_text("Part of this ")
