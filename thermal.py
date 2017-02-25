@@ -432,7 +432,9 @@ if __name__ == '__main__':
     il inverse left
     """
     p.print_markup(markup)
-    print(p.has_printed())
+
+    while p.has_printed()==False:
+        pass
 
     p.print_text("\nHello maailma. How's it going?\n")
     p.print_text("Part of this ")
