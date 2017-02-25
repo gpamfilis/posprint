@@ -42,6 +42,7 @@ if __name__ == '__main__':
                         for line in lines:
                             p.print_text(line[:])
                         p.linefeed(5)
+                        break
             else:
                 pass
 
