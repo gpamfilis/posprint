@@ -97,7 +97,7 @@ def print_order(id_, order):
         print("printing line", line[:])
         p.print_text(line[:]+'\n')
 
-    p.linefeed(3)
+    p.linefeed(5)
 
     check_printer_status(p)
 
