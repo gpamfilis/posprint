@@ -34,16 +34,22 @@ def create_deltio():
         except Exception, e:
             print(e)
             continue
+        order = []
 
         f = open("./order_txt/id_" + str(i) + "_text.txt", "w")
         items = json["items"]
         table_name = items[0]["table_name"]
         f.write(table_name + "  " + items[0]["datetime"])
+
+        order.append(table_name + "  " + items[0]["datetime"])
+
         f.write("\n")
         f.write(str(i))
+        order.append(str(i))
         f.write("\n")
         for item in items:
             name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
+            order.append(name)
             f.write(name)
             f.write("\n")
             if len(item["contents"]) == 0:
@@ -52,9 +58,11 @@ def create_deltio():
                 contents = item["contents"]
                 for content in contents:
                     # find a way to range them on a line.
-                    f.write("    " + greeklish.main(content))
+                    cont = "    " + greeklish.main(content)
+                    f.write(cont)
                     f.write("\n")
         f.close()
 
+        print(order)
 if __name__ == '__main__':
     create_deltio()
