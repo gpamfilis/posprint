@@ -107,10 +107,10 @@ def print_order(id_, order):
 
 
 if __name__ == '__main__':
-    int = InternetConnection()
+    # int = InternetConnection()
     pnc = PrinterNetCalls()
     while True:
-        int.check_internet()
+        pnc.check_internet()
         ids = pnc.get_orders_to_print()
         for id_ in ids:
             order = create_deltio(id_)

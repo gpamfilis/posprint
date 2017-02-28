@@ -7,7 +7,6 @@ class InternetConnection:
     def __init__(self):
         pass
 
-
     def check_internet(self):
         status_code = 0
         print("Checking for an internet connection")
