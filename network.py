@@ -9,6 +9,7 @@ class PrinterNetCalls:
         self.store_id = 1
 
     def get_order(self, order_id):
+        print("GET request for order_id = ", order_id)
         while True:
             try:
                 data = requests.get(self.base_url + "/api/app/order?order_id=" + str(order_id))
@@ -19,6 +20,7 @@ class PrinterNetCalls:
         return json
 
     def get_orders_to_print(self):
+        print("GET request for store_id = ", self.store_id)
         while True:
             try:
                 data = requests.get(self.base_url + "/api/printer/orders-print?store_id=" + str(self.store_id))
@@ -30,6 +32,8 @@ class PrinterNetCalls:
 
 
     def post_that_order_was_printed(self, order_id):
+        print("POST request for order_id = ", order_id)
+
         status_code = 0
         while status_code!=200:
             try:
