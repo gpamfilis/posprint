@@ -17,7 +17,7 @@ def read_items(fil):
 
 
 def printer_paper_status(p):
-    paper_status = p.has_paper()
+    paper_status = [p.has_paper() for i in range(10)][-1]
     while paper_status is False:
         paper_status = p.has_paper()
         print("no paper in printer!")
