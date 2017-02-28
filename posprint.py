@@ -25,6 +25,7 @@ if __name__ == '__main__':
         paper_status = p.has_paper()
 
         while paper_status is False:
+            paper_status = p.has_paper()
             print("no paper in printer!")
             time.sleep(2)
             if paper_status ==True:
