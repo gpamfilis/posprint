@@ -60,67 +60,23 @@ if __name__ == '__main__':
                         print("--ignore--")
                         break
                     break
-                break
-
 
             else:
                 print("actual printing: ", line[:])
                 # p.print_text(line[:])
 
-        p.linefeed(3)
-        printer_status = p.has_printed()
-        if printer_status is False:
-            while printer_status is False:
-                print("not done printing")
-                printer_status = p.has_printed()
-                if printer_status:
-                    print("printing completed")
-                    print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
-                    time.sleep(5)
-
-        else:
-            print("printing completed")
-            print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
-            time.sleep(5)
-
-
-
-
-            # print("the paper status is:", paper_status)
-
-            # # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
-            # # full previous items.
-            # if paper_status==False:
-            #     while paper_status == False:
-            #         print("Waiting for paper...")
-            #         paper_status = p.has_paper()
-            #         time.sleep(3)
-            #         if paper_status:
-            #             break
-            #         else:
-            #             time.sleep(5)
-            #             p.linefeed(4)
-            #             print("reprinting...", lines)
-            #             time.sleep(5)
-            #             p.print_text("REPRINTING")
-            #             p.linefeed(1)
-            #             for line in lines:
-            #                 p.print_text(line[:])
-            #             p.linefeed(5)
-            #             break
-            # else:
-            #     pass
-
-
-
-        # p.linefeed(5)
+        # p.linefeed(3)
         # printer_status = p.has_printed()
-        # while printer_status == False:
-        #     printer_status = p.has_printed()
-        #     print("Waiting for the printer to complete...")
-        #     time.sleep(3)
+        # if printer_status is False:
+        #     while printer_status is False:
+        #         print("not done printing")
+        #         printer_status = p.has_printed()
+        #         if printer_status:
+        #             print("printing completed")
+        #             print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+        #             time.sleep(5)
         #
-        # print("printed order_id", fil.split("_")[1])
-        # # pnc.post_that_order_was_printed(fil.split("_")[1])
-        # time.sleep(4)
-
+        # else:
+        #     print("printing completed")
+        #     print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+        #     time.sleep(5)
