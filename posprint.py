@@ -37,6 +37,7 @@ if __name__ == '__main__':
 
         print("---NEW--ORDER----!!")
         p.print_text("---NEW--ORDER----!!")
+        p.print_text("\n")
         for line in lines:
             paper_status = p.has_paper()
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
                         print("reprinting", line[:])
                         p.print_text(line[:])
                     p.linefeed(3)
-                    p.print_text("---IGNORE---")
+                    p.print_text("---IGNORE---") # todo correct this fucking shit. after ignore it always print s some items
                     break
                 break
 
