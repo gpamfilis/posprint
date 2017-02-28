@@ -48,10 +48,11 @@ if __name__ == '__main__':
 
                     p.print_text("--REPRINTING--")
                     for line in lines:
-                        print("reprinting",line[:])
+                        print("reprinting", line[:])
                         p.print_text(line[:])
                     p.linefeed(3)
                     break
+                break
 
             print("printing: ", line[:])
             p.print_text(line[:])
