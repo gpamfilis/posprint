@@ -56,7 +56,7 @@ if __name__ == '__main__':
                     p.linefeed(3)
                     p.print_text("---IGNORE---") # todo correct this fucking shit. after ignore it always print s some items
                     break
-                break
+
 
 
 
