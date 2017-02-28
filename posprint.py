@@ -50,6 +50,24 @@ if __name__ == '__main__':
 
             print(line[:])
             p.print_text(line[:])
+
+            printer_status = p.has_printed()
+            if printer_status is False:
+                while printer_status is False:
+                    print("not done printing")
+                    printer_status = p.has_printed()
+                    if printer_status:
+                        print("printing completed")
+                        print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+                        time.sleep(5)
+                        break
+            else:
+                print("printing completed")
+                print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+                time.sleep(5)
+                break
+
+
             # print("the paper status is:", paper_status)
 
             # # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
