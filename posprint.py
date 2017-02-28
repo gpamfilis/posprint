@@ -41,27 +41,28 @@ if __name__ == '__main__':
         for line in lines:
             paper_status = p.has_paper()
 
-            while paper_status is False:
-                paper_status = p.has_paper()
-                print("no paper in printer!")
-                time.sleep(2)
-                if paper_status:
-                    print("paper in printer")
-                    time.sleep(5)
+            if paper_status is False:
+                while paper_status is False:
+                    paper_status = p.has_paper()
+                    print("no paper in printer!")
+                    time.sleep(2)
 
-                    p.print_text("--REPRINTING--")
-                    for line in lines:
-                        print("reprinting", line[:])
-                        p.print_text(line[:])
-                    p.linefeed(3)
-                    p.print_text("---IGNORE---") # todo correct this fucking shit. after ignore it always print s some items
-                    break
+                    if paper_status:
+                        print("paper in printer")
+                        time.sleep(5)
 
+                        p.print_text("--REPRINTING--")
+                        for line in lines:
+                            print("reprinting", line[:])
+                            # p.print_text(line[:])
+                        p.linefeed(3)
+                        # p.print_text("---IGNORE---") # todo correct this fucking shit. after ignore it always print s some items
+                        print("--ignore--")
+                        break
 
-
-
-            print("actual printing: ", line[:])
-            p.print_text(line[:])
+            else:
+                print("actual printing: ", line[:])
+                # p.print_text(line[:])
 
         p.linefeed(3)
         printer_status = p.has_printed()
