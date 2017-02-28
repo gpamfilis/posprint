@@ -2,7 +2,7 @@ import requests
 import sys
 import thermal
 import time
-from network import PrinterNetCalls
+from network import PrinterNetCalls, InternetConnection
 import sys
 import os
 import greeklish
@@ -18,6 +18,7 @@ ids = pnc.get_orders_to_print()
 
 def create_deltio(id_):
     try:
+        int.check_internet()
         json = pnc.get_order(id_)
     except Exception, e:
         print(e)
@@ -106,6 +107,7 @@ def print_order(id_, order):
 
 
 if __name__ == '__main__':
+    int = InternetConnection()
     pnc = PrinterNetCalls()
     while True:
         ids = pnc.get_orders_to_print()

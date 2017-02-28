@@ -3,14 +3,34 @@ import requests
 __author__ = 'gpamfilis'
 
 
-class PrinterNetCalls:
+class InternetConnection:
+    def __init__(self):
+        pass
+
+
+    def check_internet(self):
+        status_code = 0
+        print("Checking for an internet connection")
+        while status_code != 200:
+            try:
+                req = requests.get("www.google.com")
+                status_code = req.status_code
+            except Exception, e:
+                print(e)
+        return None
+
+
+class PrinterNetCalls(InternetConnection):
     def __init__(self):
         self.base_url = "http://www.e-orders.org"
         self.store_id = 1
 
     def get_order(self, order_id):
         print("GET request for order_id = ", order_id)
+
         while True:
+            self.check_internet()
+
             try:
                 data = requests.get(self.base_url + "/api/app/order?order_id=" + str(order_id))
                 json = data.json()
@@ -22,6 +42,7 @@ class PrinterNetCalls:
     def get_orders_to_print(self):
         print("GET request for store_id = ", self.store_id)
         while True:
+            self.check_internet()
             try:
                 data = requests.get(self.base_url + "/api/printer/orders-print?store_id=" + str(self.store_id))
                 json = data.json()["ids"]
@@ -36,6 +57,8 @@ class PrinterNetCalls:
 
         status_code = 0
         while status_code!=200:
+            self.check_internet()
+
             try:
                 data = requests.post(self.base_url + "/api/printer/orders-print?order_id=" + str(order_id))
                 # json = data.json()["ids"]
