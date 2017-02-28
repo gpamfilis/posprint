@@ -48,7 +48,7 @@ if __name__ == '__main__':
     p = thermal.ThermalPrinter(serialport=serial_port)
 
     for fil in os.listdir("./order_txt"):
-        print("Attempting to print order_id: ", fil.split("_")[1])
+        print("Attempting to print ord er_id: ", fil.split("_")[1])
         lines = read_items(fil)
         print("initial paper check")
         printer_paper_status(p)
