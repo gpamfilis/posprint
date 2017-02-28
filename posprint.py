@@ -41,21 +41,21 @@ if __name__ == '__main__':
         lines = read_items(fil)
         print("initial paper check")
         printer_paper_status(p)
-        print("PRINTING ORDER")
+        print("---NEW--ORDER----!!")
         print("printing order_id", fil.split("_")[1])
+        p.print_text("---NEW--ORDER----!!")
+        p.print_text("\n")
         for line in lines:
             printer_paper_status(p)
             print("printing line", line[:])
-            time.sleep(2)
+            p.print_text(line[:])
 
-
-
+        p.linefeed(3)
 
 
         #
         # print("---NEW--ORDER----!!")
-        # p.print_text("---NEW--ORDER----!!")
-        # p.print_text("\n")
+
         # for line in lines:
         #     paper_status = p.has_paper()
         #
