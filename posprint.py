@@ -59,6 +59,9 @@ if __name__ == '__main__':
                         # p.print_text("---IGNORE---") # todo correct this fucking shit. after ignore it always print s some items
                         print("--ignore--")
                         break
+                    break
+                break
+
 
             else:
                 print("actual printing: ", line[:])
