@@ -52,8 +52,9 @@ if __name__ == '__main__':
                         p.print_text(line[:])
                     p.linefeed(3)
                     break
-                break
-            break
+
+                continue
+
 
             print("printing: ", line[:])
             p.print_text(line[:])
