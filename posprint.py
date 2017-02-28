@@ -36,6 +36,7 @@ if __name__ == '__main__':
         print("printing order_id", fil.split("_")[1])
 
         print("---NEW--ORDER----!!")
+        p.print_text("---NEW--ORDER----!!")
         for line in lines:
             paper_status = p.has_paper()
 
