@@ -46,15 +46,17 @@ if __name__ == '__main__':
                     print("paper in printer")
                     time.sleep(5)
 
+                    p.print_text("--REPRINTING--")
                     for line in lines:
-                        print(line[:])
+                        print("reprinting",line[:])
                         p.print_text(line[:])
-                    p.linefeed(5)
+                    p.linefeed(3)
                     break
 
-            print(line[:])
+            print("printing: ", line[:])
             p.print_text(line[:])
 
+        p.linefeed(3)
         printer_status = p.has_printed()
         if printer_status is False:
             while printer_status is False:
@@ -70,7 +72,6 @@ if __name__ == '__main__':
             print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
             time.sleep(5)
 
-        p.linefeed(5)
 
 
 
