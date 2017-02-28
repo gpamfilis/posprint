@@ -28,7 +28,7 @@ if __name__ == '__main__':
             paper_status = p.has_paper()
             print("no paper in printer!")
             time.sleep(2)
-            if paper_status ==True:
+            if paper_status:
                 print("paper in printer")
                 time.sleep(5)
                 break
@@ -37,8 +37,20 @@ if __name__ == '__main__':
         print("printing order_id", fil.split("_")[1])
 
         for line in lines:
+            paper_status = p.has_paper()
+
+            while paper_status is False:
+                paper_status = p.has_paper()
+                print("no paper in printer!")
+                time.sleep(2)
+                if paper_status:
+                    print("paper in printer")
+                    time.sleep(5)
+                    break
+
+            print(line[:])
             p.print_text(line[:])
-            print("the paper status is:", paper_status)
+            # print("the paper status is:", paper_status)
 
             # # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
             # # full previous items.
@@ -65,14 +77,14 @@ if __name__ == '__main__':
 
 
 
-        p.linefeed(5)
-        printer_status = p.has_printed()
-        while printer_status == False:
-            printer_status = p.has_printed()
-            print("Waiting for the printer to complete...")
-            time.sleep(3)
-
-        print("printed order_id", fil.split("_")[1])
-        # pnc.post_that_order_was_printed(fil.split("_")[1])
-        time.sleep(4)
+        # p.linefeed(5)
+        # printer_status = p.has_printed()
+        # while printer_status == False:
+        #     printer_status = p.has_printed()
+        #     print("Waiting for the printer to complete...")
+        #     time.sleep(3)
+        #
+        # print("printed order_id", fil.split("_")[1])
+        # # pnc.post_that_order_was_printed(fil.split("_")[1])
+        # time.sleep(4)
 
