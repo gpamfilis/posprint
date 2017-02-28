@@ -107,7 +107,8 @@ def print_order(id_, order):
 
 if __name__ == '__main__':
     pnc = PrinterNetCalls()
-    ids = pnc.get_orders_to_print()
-    for id_ in ids:
-        order = create_deltio(id_)
-        print_order(id_, order)
+    while True:
+        ids = pnc.get_orders_to_print()
+        for id_ in ids:
+            order = create_deltio(id_)
+            print_order(id_, order)
