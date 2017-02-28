@@ -65,4 +65,7 @@ if __name__ == '__main__':
 
         check_printer_status(p)
 
+        pnc.post_that_order_was_printed(int(fil.split("_")[1]))
         print("Sending message to server for order id: ", fil.split("_")[1])
+        time.sleep(5)
+

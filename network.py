@@ -30,8 +30,15 @@ class PrinterNetCalls:
 
 
     def post_that_order_was_printed(self, order_id):
-        print("printed!! ", order_id)
-        return None
+        while True:
+            try:
+                data = requests.post(self.base_url + "/api/printer/orders-print?store_id=" + str(order_id))
+                json = data.json()["ids"]
+                print("printed!! ", order_id)
+                break
+            except Exception, e:
+                print(e, e.args, e.message)
+        return json
 
 
 if __name__ == '__main__':
