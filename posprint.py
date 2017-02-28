@@ -18,8 +18,24 @@ if __name__ == '__main__':
         f = open("./order_txt/"+fil)
         lines = f.readlines()
         f.close()
+
+
+        print("initial paper check")
+
+        paper_status = p.has_paper()
+
+        while paper_status is False:
+            print("no paper in printer!")
+            time.sleep(2)
+            if paper_status ==True:
+                print("paper in printer")
+                time.sleep(5)
+                break
+
+        print("going on to print paper")
+        print("printing order_id", fil.split("_")[1])
+
         for line in lines:
-            paper_status = p.has_paper()
             p.print_text(line[:])
             print("the paper status is:", paper_status)
 
@@ -54,5 +70,8 @@ if __name__ == '__main__':
             printer_status = p.has_printed()
             print("Waiting for the printer to complete...")
             time.sleep(3)
-        pnc.post_that_order_was_printed(fil.split("_")[1])
+
+        print("printed order_id", fil.split("_")[1])
+        # pnc.post_that_order_was_printed(fil.split("_")[1])
         time.sleep(4)
+
