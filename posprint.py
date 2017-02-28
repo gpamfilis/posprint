@@ -19,8 +19,8 @@ if __name__ == '__main__':
         lines = f.readlines()
         f.close()
         for line in lines:
-            p.print_text(line[:])
             paper_status = p.has_paper()
+            p.print_text(line[:])
             print("the paper status is:", paper_status)
 
             # # todo check the paper status. if there is no paper wait. if the paper status changed to true. print the
