@@ -18,7 +18,7 @@ ids = pnc.get_orders_to_print()
 
 def create_deltio(id_):
     try:
-        int.check_internet()
+        # int.check_internet()
         json = pnc.get_order(id_)
     except Exception, e:
         print(e)
