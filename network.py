@@ -13,8 +13,10 @@ class InternetConnection:
         print("Checking for an internet connection")
         while status_code != 200:
             try:
-                req = requests.get("www.google.com")
+                req = requests.get("https://www.google.com")
                 status_code = req.status_code
+                if status_code==200:
+                    break
             except Exception, e:
                 print(e)
         return None
