@@ -65,18 +65,18 @@ if __name__ == '__main__':
                 print("actual printing: ", line[:])
                 # p.print_text(line[:])
 
-        # p.linefeed(3)
-        # printer_status = p.has_printed()
-        # if printer_status is False:
-        #     while printer_status is False:
-        #         print("not done printing")
-        #         printer_status = p.has_printed()
-        #         if printer_status:
-        #             print("printing completed")
-        #             print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
-        #             time.sleep(5)
-        #
-        # else:
-        #     print("printing completed")
-        #     print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
-        #     time.sleep(5)
+        p.linefeed(3)
+        printer_status = p.has_printed()
+        if printer_status is False:
+            while printer_status is False:
+                print("not done printing")
+                printer_status = p.has_printed()
+                if printer_status:
+                    print("printing completed")
+                    print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+                    time.sleep(5)
+
+        else:
+            print("printing completed")
+            print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
+            time.sleep(5)
