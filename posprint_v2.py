@@ -21,24 +21,25 @@ def create_deltio(id_):
         json = pnc.get_order(id_)
     except Exception, e:
         print(e)
-        order = []
 
-        items = json["items"]
-        table_name = items[0]["table_name"]
+    order = []
 
-        order.append(table_name + "  " + items[0]["datetime"])
-        order.append(str(id_))
-        for item in items:
-            name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
-            order.append(name)
-            if len(item["contents"]) == 0:
-                pass
-            else:
-                contents = item["contents"]
-                for content in contents:
-                    # find a way to range them on a line.
-                    cont = "    " + greeklish.main(content)
-                    order.append(cont)
+    items = json["items"]
+    table_name = items[0]["table_name"]
+
+    order.append(table_name + "  " + items[0]["datetime"])
+    order.append(str(id_))
+    for item in items:
+        name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
+        order.append(name)
+        if len(item["contents"]) == 0:
+            pass
+        else:
+            contents = item["contents"]
+            for content in contents:
+                # find a way to range them on a line.
+                cont = "    " + greeklish.main(content)
+                order.append(cont)
     return order
 
 
