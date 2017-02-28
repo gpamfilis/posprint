@@ -60,12 +60,12 @@ if __name__ == '__main__':
                     print("printing completed")
                     print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
                     time.sleep(5)
-                    break
+
         else:
             print("printing completed")
             print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
             time.sleep(5)
-            break
+
 
 
             # print("the paper status is:", paper_status)
