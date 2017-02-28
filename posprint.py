@@ -19,7 +19,6 @@ if __name__ == '__main__':
         lines = f.readlines()
         f.close()
 
-
         print("initial paper check")
 
         paper_status = p.has_paper()
@@ -46,6 +45,11 @@ if __name__ == '__main__':
                 if paper_status:
                     print("paper in printer")
                     time.sleep(5)
+
+                    for line in lines:
+                        print(line[:])
+                        p.print_text(line[:])
+                    p.linefeed(5)
                     break
 
             print(line[:])
@@ -65,6 +69,8 @@ if __name__ == '__main__':
             print("printing completed")
             print("sending messaged to server that id {0} is printed!".format(fil.split("_")[1]))
             time.sleep(5)
+
+        p.linefeed(5)
 
 
 
