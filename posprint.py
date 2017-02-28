@@ -41,8 +41,12 @@ if __name__ == '__main__':
         lines = read_items(fil)
         print("initial paper check")
         printer_paper_status(p)
-        print("going on to print paper")
+        print("PRINTING ORDER")
         print("printing order_id", fil.split("_")[1])
+        for line in lines:
+            printer_paper_status(p)
+            print("printing line", line[:])
+            time.sleep(2)
 
 
 
