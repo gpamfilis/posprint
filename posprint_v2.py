@@ -108,6 +108,7 @@ def print_order(id_, order):
 
 if __name__ == '__main__':
     int = InternetConnection()
+    int.check_internet()
     pnc = PrinterNetCalls()
     while True:
         ids = pnc.get_orders_to_print()

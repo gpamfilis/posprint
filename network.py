@@ -31,7 +31,7 @@ class PrinterNetCalls(InternetConnection):
         print("GET request for order_id = ", order_id)
 
         while True:
-            self.check_internet()
+            # self.check_internet()
 
             try:
                 data = requests.get(self.base_url + "/api/app/order?order_id=" + str(order_id))
@@ -44,7 +44,7 @@ class PrinterNetCalls(InternetConnection):
     def get_orders_to_print(self):
         print("GET request for store_id = ", self.store_id)
         while True:
-            self.check_internet()
+            # self.check_internet()
             try:
                 data = requests.get(self.base_url + "/api/printer/orders-print?store_id=" + str(self.store_id))
                 json = data.json()["ids"]
@@ -58,8 +58,8 @@ class PrinterNetCalls(InternetConnection):
         print("POST request for order_id = ", order_id)
 
         status_code = 0
-        while status_code!=200:
-            self.check_internet()
+        while status_code != 200:
+            # self.check_internet()
 
             try:
                 data = requests.post(self.base_url + "/api/printer/orders-print?order_id=" + str(order_id))
