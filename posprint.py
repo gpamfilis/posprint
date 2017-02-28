@@ -35,31 +35,31 @@ if __name__ == '__main__':
         print("going on to print paper")
         print("printing order_id", fil.split("_")[1])
 
+        print("---NEW--ORDER----!!")
         for line in lines:
             paper_status = p.has_paper()
-            if paper_status:
-                print("printing: ", line[:])
-                p.print_text(line[:])
-            else:
-                while paper_status is False:
-                    paper_status = p.has_paper()
-                    print("no paper in printer!")
-                    time.sleep(2)
-                    if paper_status:
-                        print("paper in printer")
-                        time.sleep(5)
 
-                        p.print_text("--REPRINTING--")
-                        for line in lines:
-                            print("reprinting", line[:])
-                            p.print_text(line[:])
-                        p.linefeed(3)
-                        break
+            while paper_status is False:
+                paper_status = p.has_paper()
+                print("no paper in printer!")
+                time.sleep(2)
+                if paper_status:
+                    print("paper in printer")
+                    time.sleep(5)
+
+                    p.print_text("--REPRINTING--")
+                    for line in lines:
+                        print("reprinting", line[:])
+                        p.print_text(line[:])
+                    p.linefeed(3)
+                    p.print_text("---IGNORE---")
                     break
-                    # continue
+                break
 
 
 
+            print("actual printing: ", line[:])
+            p.print_text(line[:])
 
         p.linefeed(3)
         printer_status = p.has_printed()
