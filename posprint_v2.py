@@ -1,6 +1,7 @@
+# coding: utf-8
 import requests
 import sys
-import thermal
+# import thermal
 import time
 from network import PrinterNetCalls, InternetConnection
 import sys
@@ -23,26 +24,30 @@ def create_deltio(id_):
     except Exception, e:
         print(e)
 
-    order = []
+    if json is None:
+        return None
+    else:    
+        order = []
 
-    items = json["items"]
-    table_name = items[0]["table_name"]
+        items = json["items"]
+        table_name = items[0]["table_name"]
 
-    order.append(table_name + "  " + items[0]["datetime"])
-    order.append(str(id_))
-    for item in items:
-        name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
-        order.append(name)
-        if len(item["contents"]) == 0:
-            pass
-        else:
-            # contents = item["contents"]
-            # for content in contents:
-            #     # find a way to range them on a line.
-            #     cont = "    " + greeklish.main(content)
-            #     order.append(cont)
-            pass
-    return order
+        order.append(table_name + "  " + items[0]["datetime"])
+        order.append(str(id_))
+        for item in items:
+            name = "x" + str(item["quantity"]) + " " + greeklish.main(item["name"].encode("utf-8"))[:28]
+            order.append(name)
+            if len(item["contents"]) == 0:
+                pass
+            else:
+                contents = item["contents"]
+                for content in contents:
+                    # find a way to range them on a line.
+                    name = content["content_name"].encode("utf-8")
+                    greeklish_content = greeklish.main(name)
+                    cont = "    " + greeklish_content
+                    order.append(cont)
+        return order
 
 
 def read_items(fil):
@@ -115,4 +120,7 @@ if __name__ == '__main__':
         ids = pnc.get_orders_to_print()
         for id_ in ids:
             order = create_deltio(id_)
-            print_order(id_, order)
+            if order is None:
+                pass
+            else:
+                print_order(id_, order)

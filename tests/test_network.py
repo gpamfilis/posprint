@@ -1,6 +1,8 @@
+# coding: utf-8
 import os
 import unittest
 from ..network import InternetConnection
+from ..posprint_v2 import create_deltio
 
 class BasicsTestCase(unittest.TestCase):
     def setUp(self):
@@ -13,5 +15,6 @@ class BasicsTestCase(unittest.TestCase):
         status_code = InternetConnection().check_internet()
         self.assertTrue(status_code == 200)
 
-    def test_app_is_testing(self):
-        self.assertFalse(True == False)
+    def test_create_deltio(self):
+        create_deltio(1)
+        self.assertTrue(True == False)
