@@ -38,7 +38,7 @@ class PrinterNetCalls(InternetConnection):
                 status_code  = data.status_code
                 break
             except Exception, e:
-                print(e, e.args, e.message)
+                print("This is the get_order exception: ", e, e.args, e.message)
 
         if status_code == 200:
             return json["items"]
