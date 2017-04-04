@@ -22,7 +22,7 @@ def create_deltio(id_):
         # int.check_internet()
         json = pnc.get_order(id_)
     except Exception, e:
-        print(e)
+        print("This is the create_deltio exception", e)
 
     if json is None:
         return None

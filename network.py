@@ -54,7 +54,7 @@ class PrinterNetCalls(InternetConnection):
                 json = data.json()["ids"]
                 break
             except Exception, e:
-                print(e, e.args, e.message)
+                print("The is the get_orders_to_print exception", e, e.args, e.message)
         return json
 
 
@@ -72,7 +72,7 @@ class PrinterNetCalls(InternetConnection):
                 print("printed!! ", data.status_code)
                 break
             except Exception, e:
-                print(e, e.args, e.message)
+                print("this is the post_that_order_was_printed exception: ",e, e.args, e.message)
         return None
 
 
