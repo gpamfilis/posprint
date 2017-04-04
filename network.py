@@ -34,9 +34,12 @@ class PrinterNetCalls(InternetConnection):
 
             try:
                 data = requests.get(self.base_url + "/api/app/order?order_id=" + str(order_id))
-                json = data.json()
                 status_code  = data.status_code
-                break
+                if status_code==200:
+                    json = data.json()
+                    break
+                else:
+                    break
             except Exception, e:
                 print("This is the get_order exception: ", e, e.args, e.message)
 
