@@ -18,7 +18,7 @@ class InternetConnection:
                     break
             except Exception, e:
                 print(e)
-        return None
+        return status_code
 
 
 class PrinterNetCalls(InternetConnection):

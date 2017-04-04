@@ -36,11 +36,12 @@ def create_deltio(id_):
         if len(item["contents"]) == 0:
             pass
         else:
-            contents = item["contents"]
-            for content in contents:
-                # find a way to range them on a line.
-                cont = "    " + greeklish.main(content)
-                order.append(cont)
+            # contents = item["contents"]
+            # for content in contents:
+            #     # find a way to range them on a line.
+            #     cont = "    " + greeklish.main(content)
+            #     order.append(cont)
+            pass
     return order
 
 
