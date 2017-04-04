@@ -1,7 +1,7 @@
 # coding: utf-8
 import requests
 import sys
-# import thermal
+import thermal
 import time
 from network import PrinterNetCalls, InternetConnection
 import sys
