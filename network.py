@@ -38,7 +38,7 @@ class PrinterNetCalls(InternetConnection):
                 break
             except Exception, e:
                 print(e, e.args, e.message)
-        return json
+        return json["items"]
 
     def get_orders_to_print(self):
         print("GET request for store_id = ", self.store_id)
@@ -72,4 +72,5 @@ class PrinterNetCalls(InternetConnection):
 
 
 if __name__ == '__main__':
-    pass
+    order = PrinterNetCalls().get_order(10)
+    print(order)
