@@ -71,6 +71,31 @@ class PrinterNetCalls(InternetConnection):
         else:
             return None
 
+
+
+    def get_checkout(self, checkout_id):
+        print("GET request for checkout_id = ", checkout_id)
+
+        while True:
+            # self.check_internet()
+
+            try:
+                data = requests.get(self.base_url + "/api/app/checkout?checkout_id=" + str(checkout_id))
+                status_code  = data.status_code
+                if status_code==200:
+                    json = data.json()
+                    break
+                else:
+                    break
+            except Exception, e:
+                print("This is the get_checkout exception: ", e, e.args, e.message)
+
+        if status_code == 200:
+            return json
+        else:
+            return None
+
+
     def get_orders_to_print(self):
         print("GET request for store_id = ", self.store_id)
         while True:
@@ -82,6 +107,22 @@ class PrinterNetCalls(InternetConnection):
             except Exception, e:
                 print("The is the get_orders_to_print exception", e, e.args, e.message)
         return json
+
+
+    def get_checkouts_to_print(self):
+        print("GET request for store_id = ", self.store_id)
+        while True:
+            # self.check_internet()
+            try:
+                data = requests.get(self.base_url + "/api/printer/checkout-print?store_id=" + str(self.store_id))
+                json = data.json()["ids"]
+                break
+            except Exception, e:
+                print("The is the get_checkouts_to_print exception", e, e.args, e.message)
+        return json
+
+
+
 
 
     def post_that_order_was_printed(self, order_id):
