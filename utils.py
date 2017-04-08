@@ -73,10 +73,10 @@ class Create(object):
         print(order_items)
         grand_total = 0
 
-        print("other items")
-        print(order_items["items"])
-        print("the checkout items")
-        for order in order_items["items"]:
+        # print("other items")
+        # print(order_items["items"])
+        # print("the checkout items")
+        for order in order_items:
             print(order)
             # for item in order:
             #     print("the item", item)
