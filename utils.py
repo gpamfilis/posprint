@@ -67,14 +67,14 @@ class Create(object):
     	print("object")
     	print(json_object)
         checkout_list = []
-        order_items = json_object
+        order_items = json_object["items"]
         grand_total = 0
         print("the checkout items")
         for order in order_items:
         	print(order)
-        #     for item in order:
+            for item in order:
 
-        #     	# print(item)
+            	print(item)
 
         #         name = str(item["quantity"]) + "  " + greeklishgrtoen(item["name"].encode("utf-8"))
         #         checkout_list.append(name)
