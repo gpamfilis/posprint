@@ -71,7 +71,7 @@ class Create(object):
         order_items = json_object["items"]
         grand_total = 0
         print("the checkout items")
-        for order in order_items:
+        for order in order_items["items"]:
             print(order)
             for item in order:
                 print("the item", item)
