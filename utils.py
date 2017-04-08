@@ -68,11 +68,13 @@ class Create(object):
         order_items = json_object
         grand_total = 0
         for order in order_items:
+        	print(order)
             for item in order:
-                name = str(item["quantity"]) + "  " + greeklishgrtoen(item["name"].encode("utf-8"))
-                checkout_list.append(name)
-            total = "subtotal  " + str(order["total"])
-            grand_total += order["total"]
-            checkout_list.append(total)
-        checkout_list.append("Total:    "+str(round(grand_total, 2)))
+            	print(item)
+        #         name = str(item["quantity"]) + "  " + greeklishgrtoen(item["name"].encode("utf-8"))
+        #         checkout_list.append(name)
+        #     total = "subtotal  " + str(order["total"])
+        #     grand_total += order["total"]
+        #     checkout_list.append(total)
+        # checkout_list.append("Total:    "+str(round(grand_total, 2)))
         return checkout_list
