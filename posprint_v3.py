@@ -122,7 +122,7 @@ if __name__ == '__main__':
         pnc.check_internet()
         ids = pnc.get_orders_to_print()
         for id_ in ids:
-            order = pnc.get_order(id_)
+            order = pnc.get_order2(id_)
             print(order)
             # order_list = create.order(order)
             # if order_list is None:

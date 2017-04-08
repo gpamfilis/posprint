@@ -48,6 +48,29 @@ class PrinterNetCalls(InternetConnection):
         else:
             return None
 
+
+    def get_order2(self, order_id):
+        print("GET request for order_id = ", order_id)
+
+        while True:
+            # self.check_internet()
+
+            try:
+                data = requests.get(self.base_url + "/api/app/order?order_id=" + str(order_id))
+                status_code  = data.status_code
+                if status_code==200:
+                    json = data.json()
+                    break
+                else:
+                    break
+            except Exception, e:
+                print("This is the get_order exception: ", e, e.args, e.message)
+
+        if status_code == 200:
+            return json
+        else:
+            return None
+
     def get_orders_to_print(self):
         print("GET request for store_id = ", self.store_id)
         while True:
