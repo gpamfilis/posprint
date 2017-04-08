@@ -65,7 +65,7 @@ class Create(object):
     @staticmethod
     def checkout(json_object):
         checkout_list = []
-        order_items = json_object["items"]
+        order_items = json_object
         grand_total = 0
         for order in order_items:
             for item in order["items"]:
