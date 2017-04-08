@@ -78,8 +78,8 @@ class Create(object):
         # print("the checkout items")
         for order in order_items:
             print(order)
-            # for item in order:
-            #     print("the item", item)
+            for item in order["items"]:
+                print("the item", item)
                 # name = str(item["quantity"]) + "  " + greeklishgrtoen(item["name"].encode("utf-8"))
         #         checkout_list.append(name)
         #     total = "subtotal  " + str(order["total"])
