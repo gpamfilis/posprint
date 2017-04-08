@@ -123,8 +123,9 @@ if __name__ == '__main__':
         ids = pnc.get_orders_to_print()
         for id_ in ids:
             order = pnc.get_order(id_)
-            order_list = create.order(order)
-            if order_list is None:
-                pass
-            else:
-                print_order2(id_, order_list)
+            print(order)
+            # order_list = create.order(order)
+            # if order_list is None:
+            #     pass
+            # else:
+            #     print_order2(id_, order_list)
