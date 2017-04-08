@@ -122,9 +122,9 @@ if __name__ == '__main__':
         pnc.check_internet()
         ids = pnc.get_orders_to_print()
         for id_ in ids:
-            order = create_deltio(id_)
-            order_list = create.print_order2(order)
+            order = pnc.get_order(id_)
+            order_list = create.order(order)
             if order_list is None:
                 pass
             else:
-                print_order(id_, order_list)
+                print_order2(id_, order_list)
