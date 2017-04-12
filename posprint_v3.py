@@ -120,15 +120,15 @@ if __name__ == '__main__':
     create = Create()
     while True:
         pnc.check_internet()
-        # order_ids = pnc.get_orders_to_print()
-        # for order_id in order_ids:
-        #     order = pnc.get_order2(order_id)
-        #     print(order)
-        #     order_list = create.order(order)
-        #     if order_list is None:
-        #         pass
-        #     else:
-        #         print_order2(order_id, order_list)
+        order_ids = pnc.get_orders_to_print()
+        for order_id in order_ids:
+            order = pnc.get_order2(order_id)
+            print(order)
+            order_list = create.order(order)
+            if order_list is None:
+                pass
+            else:
+                print_order2(order_id, order_list)
 
         checkout_ids = pnc.get_checkouts_to_print()
         print(checkout_ids)
