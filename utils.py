@@ -60,6 +60,10 @@ class Create(object):
                             greeklish_content = greeklishgrtoen(name)
                             cont = "    YES  " + greeklish_content
                             order.append(cont)
+                        elif content['changed'] == 0:
+                            pass
+                        else:
+                            pass
             return order
 
     @staticmethod
