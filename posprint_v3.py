@@ -138,7 +138,7 @@ def print_order3(id_, order_list):
 
     check_printer_status(p)
 
-    pnc.post_that_order_was_printed(int(id_))
+    pnc.post_that_checkout_was_printed(int(checkout_id))
     print("Sending message to server for checkout id: ", id_)
     time.sleep(5)
 
@@ -169,4 +169,3 @@ if __name__ == '__main__':
                 pass
             else:
                 print_order3(checkout_id, checkout_list)
-                pnc.post_that_checkout_was_printed(int(checkout_id))
