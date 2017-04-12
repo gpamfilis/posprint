@@ -122,9 +122,6 @@ class PrinterNetCalls(InternetConnection):
         return json
 
 
-
-
-
     def post_that_order_was_printed(self, order_id):
         print("POST request for order_id = ", order_id)
 
@@ -140,6 +137,23 @@ class PrinterNetCalls(InternetConnection):
                 break
             except Exception, e:
                 print("this is the post_that_order_was_printed exception: ",e, e.args, e.message)
+        return None
+
+    def post_that_checkout_was_printed(self, order_id):
+        print("POST request for order_id = ", order_id)
+
+        status_code = 0
+        while status_code != 200:
+            # self.check_internet()
+
+            try:
+                data = requests.post(self.base_url + "/api/printer/checkout-print?checkout_id=" + str(order_id))
+                # json = data.json()["ids"]
+                status_code = data.status_code
+                print("printed!! ", data.status_code)
+                break
+            except Exception, e:
+                print("this is the post_that_order_was_printed exception: ", e, e.args, e.message)
         return None
 
 

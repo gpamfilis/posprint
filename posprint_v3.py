@@ -140,3 +140,4 @@ if __name__ == '__main__':
                 pass
             else:
                 print_order2(checkout_id, checkout_list)
+                pnc.post_that_checkout_was_printed(int(checkout_id))
