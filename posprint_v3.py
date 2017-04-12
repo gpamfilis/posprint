@@ -113,6 +113,35 @@ def print_order2(id_, order_list):
     print("Sending message to server for order id: ", id_)
     time.sleep(5)
 
+def print_order3(id_, order_list):
+    pnc = PrinterNetCalls()
+    if len(sys.argv) == 2:
+        serial_port = sys.argv[1]
+    else:
+        serial_port = thermal.ThermalPrinter.SERIALPORT
+    p = thermal.ThermalPrinter(serialport=serial_port)
+
+    print("Attempting to print ord er_id: ", id_)
+    lines = order_list
+    print("initial paper check")
+    printer_paper_status(p)
+    print("---CHECKOUT----!!")
+    print("printing order_id", id_)
+    p.print_text("---CHECKOUT----!!")
+    p.print_text("\n")
+    for line in lines:
+        printer_paper_status(p)
+        print("printing line", line[:])
+        p.print_text(line[:]+'\n')
+
+    p.linefeed(5)
+
+    check_printer_status(p)
+
+    pnc.post_that_order_was_printed(int(id_))
+    print("Sending message to server for checkout id: ", id_)
+    time.sleep(5)
+
 
 if __name__ == '__main__':
     # int = InternetConnection()
@@ -139,5 +168,5 @@ if __name__ == '__main__':
             if checkout_list is None:
                 pass
             else:
-                print_order2(checkout_id, checkout_list)
+                print_order3(checkout_id, checkout_list)
                 pnc.post_that_checkout_was_printed(int(checkout_id))
