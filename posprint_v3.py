@@ -94,10 +94,10 @@ def print_order2(id_, order_list):
 
     # print("Attempting to print ord er_id: ", id_)
     lines = order_list
-    # print("initial paper check")
+    print("initial paper check")
     printer_paper_status(p)
-    # print("---NEW--ORDER----!!")
-    # print("printing order_id", id_)
+    print("---NEW--ORDER----!!")
+    print("printing order_id", id_)
     p.print_text("-------START--NEW--ORDER-------")
     p.print_text("\n")
     for line in lines:
