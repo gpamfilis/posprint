@@ -74,11 +74,11 @@ def printer_paper_status(p):
 def check_printer_status(p):
     printer_status = p.has_printed()
     while printer_status is False:
-        print("not done printing")
+        # print("not done printing")
         printer_status = [p.has_printed() for i in range(10)][-1]
         time.sleep(2)
         if printer_status:
-            print("printer free")
+            # print("printer free")
             time.sleep(5)
             break
 
@@ -92,19 +92,19 @@ def print_order2(id_, order_list):
         serial_port = thermal.ThermalPrinter.SERIALPORT
     p = thermal.ThermalPrinter(serialport=serial_port)
 
-    print("Attempting to print ord er_id: ", id_)
+    # print("Attempting to print ord er_id: ", id_)
     lines = order_list
-    print("initial paper check")
+    # print("initial paper check")
     printer_paper_status(p)
-    print("---NEW--ORDER----!!")
-    print("printing order_id", id_)
-    p.print_text("-------------START--NEW--ORDER---------------")
+    # print("---NEW--ORDER----!!")
+    # print("printing order_id", id_)
+    p.print_text("-------START--NEW--ORDER-------")
     p.print_text("\n")
     for line in lines:
         printer_paper_status(p)
         print("printing line", line[:])
         p.print_text(line[:]+'\n')
-    p.print_text("-------------END--NEW--ORDER---------------")
+    # p.print_text("-------------END--NEW--ORDER---------------")
 
     p.linefeed(5)
 
@@ -126,7 +126,7 @@ def print_order3(id_, order_list):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
-    p.print_text("-------------START--CHECKOUT---------------")
+    p.print_text("------START--CHECKOUT---------")
     print("printing order_id", id_)
     p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
@@ -134,7 +134,7 @@ def print_order3(id_, order_list):
         printer_paper_status(p)
         print("printing line", line[:])
         p.print_text(line[:]+'\n')
-    p.print_text("-------------END--CHECKOUT---------------")
+    # p.print_text("-----------END--CHECKOUT--------")
 
     p.linefeed(5)
 
