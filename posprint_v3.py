@@ -98,12 +98,13 @@ def print_order2(id_, order_list):
     printer_paper_status(p)
     print("---NEW--ORDER----!!")
     print("printing order_id", id_)
-    p.print_text("---NEW--ORDER----!!")
+    p.print_text("-------------START--NEW--ORDER---------------")
     p.print_text("\n")
     for line in lines:
         printer_paper_status(p)
         print("printing line", line[:])
         p.print_text(line[:]+'\n')
+    p.print_text("-------------END--NEW--ORDER---------------")
 
     p.linefeed(5)
 
@@ -125,7 +126,7 @@ def print_order3(id_, order_list):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
-    print("---CHECKOUT----!!")
+    p.print_text("-------------START--CHECKOUT---------------")
     print("printing order_id", id_)
     p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
@@ -133,6 +134,7 @@ def print_order3(id_, order_list):
         printer_paper_status(p)
         print("printing line", line[:])
         p.print_text(line[:]+'\n')
+    p.print_text("-------------END--CHECKOUT---------------")
 
     p.linefeed(5)
 
@@ -169,4 +171,4 @@ if __name__ == '__main__':
                 pass
             else:
                 print_order3(checkout_id, checkout_list)
-        time.sleep(5)
+        # time.sleep(5)

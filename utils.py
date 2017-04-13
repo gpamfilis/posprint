@@ -69,22 +69,22 @@ class Create(object):
 
     @staticmethod
     def checkout(json_object):
-        print("object")
-        print(json_object)
+        # print("object")
+        # print(json_object)
 
         checkout_list = []
         order_items = json_object["items"]
-        print("order_items")
-        print(order_items)
+        # print("order_items")
+        # print(order_items)
         grand_total = 0
 
         # print("other items")
         # print(order_items["items"])
         # print("the checkout items")
         for order in order_items:
-            print(order)
+            # print(order)
             for item in order["items"]:
-                print("the item", item)
+                # print("the item", item)
                 name = "x" + str(item["quantity"]) + "  " + greeklishgrtoen(item["category"].encode("utf-8")) + " : " + greeklishgrtoen(item["name"].encode("utf-8"))
                 checkout_list.append(name)
             total = "subtotal  " + str(order["total"])
