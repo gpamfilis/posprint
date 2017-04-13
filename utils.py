@@ -42,9 +42,7 @@ class Create(object):
             order.append(str(order_id))
             # print(items)
             for item in items["items"]:
-                # print(item)
                 name = "x" + str(item["quantity"]) + "  " + greeklishgrtoen(item["category"].encode("utf-8"))[:4] + " : " + greeklishgrtoen(item["name"].encode("utf-8"))
-                # name = "x" + str(item["quantity"]) + " " + greeklishgrtoen(item["name"].encode("utf-8"))[:28]
                 order.append(name)
                 if len(item["contents"]) == 0:
                     pass
