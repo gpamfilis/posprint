@@ -161,10 +161,12 @@ if __name__ == '__main__':
             else:
                 print_order2(order_id, order_list)
 
+        print('checkout section')
         checkout_ids = pnc.get_checkouts_to_print()
         print(checkout_ids)
         for checkout_id in checkout_ids:
             checkout_list = pnc.get_checkout2(checkout_id)
+            print('checkout list: ', checkout_list)
             if checkout_list is None:
                 pass
             else:
