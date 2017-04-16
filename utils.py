@@ -22,6 +22,54 @@ class Create(object):
     def __init__(self):
         pass
 
+
+    @staticmethod
+    def order2(json_object):
+        try:
+            json = json_object
+        except Exception, e:
+            print("This is the create_deltio exception", e)
+
+        if json is None:
+            return None
+        else:
+            order = []
+            items = json
+            # print(items)
+            table_name = items['items'][0]["table_name"]
+            # print(table_name)
+            order_id = items["order_id"]
+            # print(table_name, order_id)
+            order.append(table_name + "  " + items["datetime"])
+            order.append(str(order_id))
+            # # print(items)
+            for item in items["items"]:
+                name = "x" + str(item["quantity"]) + "  " + greeklishgrtoen(item["name"].encode("utf-8"))
+                # name = "x" + str(item["quantity"]) + "  " + greeklishgrtoen(item["category"].encode("utf-8"))[:4] + " : " + greeklishgrtoen(item["name"].encode("utf-8"))
+                order.append(name)
+                if len(item["contents"]) == 0:
+                    pass
+                else:
+                    contents = item["contents"]
+                    for content in contents:
+                        if (content["changed"] == 1) and (content["default"] == 1):
+                            name = content["content_name"].encode("utf-8")
+                            greeklish_content = greeklishgrtoen(name)
+                            cont = "    NOT  " + greeklish_content
+                            order.append(cont)
+                        elif (content["changed"] == 1) and (content["default"] == 0):
+                            name = content["content_name"].encode("utf-8")
+                            greeklish_content = greeklishgrtoen(name)
+                            cont = "    YES  " + greeklish_content
+                            order.append(cont)
+                        elif content['changed'] == 0:
+                            pass
+                        else:
+                            pass
+            return order
+
+
+
     @staticmethod
     def order(json_object):
         try:
