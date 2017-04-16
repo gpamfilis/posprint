@@ -136,6 +136,7 @@ class PrinterNetCalls(InternetConnection):
                 print("This is the get_checkout exception: ", e, e.args, e.message)
 
         if status_code == 200:
+            print('ok', json)
             return json
         else:
             return None
