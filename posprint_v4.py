@@ -126,9 +126,9 @@ def print_order3(id_, order_list):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
-    p.print_text("------START--CHECKOUT---------")
+    p.print_text("---START--CHECKOUT-----")
     print("printing order_id", id_)
-    p.print_text("---CHECKOUT----!!")
+    # p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
     for line in lines:
         printer_paper_status(p)
