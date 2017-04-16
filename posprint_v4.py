@@ -154,7 +154,7 @@ if __name__ == '__main__':
         order_ids = pnc.get_orders_to_print()
         for order_id in order_ids:
             # order = pnc.get_order2(order_id)
-            print(order)
+            # print(order)
             order_list = pnc.get_order3(order_id)
             if order_list is None:
                 pass
