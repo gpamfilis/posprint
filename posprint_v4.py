@@ -161,14 +161,12 @@ if __name__ == '__main__':
             else:
                 print_order2(order_id, order_list)
 
-        # checkout_ids = pnc.get_checkouts_to_print()
-        # print(checkout_ids)
-        # for checkout_id in checkout_ids:
-        #     checkout = pnc.get_checkout(checkout_id)
-        #     print(checkout)
-        #     checkout_list = create.checkout(checkout)
-        #     if checkout_list is None:
-        #         pass
-        #     else:
-        #         print_order3(checkout_id, checkout_list)
+        checkout_ids = pnc.get_checkouts_to_print()
+        print(checkout_ids)
+        for checkout_id in checkout_ids:
+            checkout_list = pnc.get_checkout2(checkout_id)
+            if checkout_list is None:
+                pass
+            else:
+                print_order3(checkout_id, checkout_list)
         # time.sleep(5)
