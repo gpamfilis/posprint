@@ -146,22 +146,23 @@ def print_order3(id_, order_list):
 
 
 if __name__ == '__main__':
-    # int = InternetConnection()
+    serial_port = thermal.ThermalPrinter.SERIALPORT
+    p = thermal.ThermalPrinter(serialport=serial_port)
+
     pnc = PrinterNetCalls()
     create = Create()
     while True:
         pnc.check_internet()
+        print('New Order Section')
         order_ids = pnc.get_orders_to_print()
         for order_id in order_ids:
-            # order = pnc.get_order2(order_id)
-            # print(order)
             order_list = pnc.get_order3(order_id)
             if order_list is None:
                 pass
             else:
                 print_order2(order_id, order_list)
 
-        print('checkout section')
+        print('Checkout Section')
         checkout_ids = pnc.get_checkouts_to_print()
         print(checkout_ids)
         for checkout_id in checkout_ids:
@@ -171,3 +172,4 @@ if __name__ == '__main__':
                 pass
             else:
                 print_order3(checkout_id, checkout_list)
+        p.reset()
