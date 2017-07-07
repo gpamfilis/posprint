@@ -146,9 +146,6 @@ def print_order3(id_, order_list):
 
 
 if __name__ == '__main__':
-    serial_port = thermal.ThermalPrinter.SERIALPORT
-    p = thermal.ThermalPrinter(serialport=serial_port)
-
     pnc = PrinterNetCalls()
     create = Create()
     while True:
@@ -172,4 +169,5 @@ if __name__ == '__main__':
                 pass
             else:
                 print_order3(checkout_id, checkout_list)
-        p.reset()
+
+        time.sleep(5)
