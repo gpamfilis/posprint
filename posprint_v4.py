@@ -103,7 +103,7 @@ def print_order2(id_, order_list):
     for line in lines:
         printer_paper_status(p)
         print("printing line", line[:])
-        p.print_text(line[:]+'\n')
+        p.print_text(line[:]+'\n', chars_per_line=23)
     # p.print_text("-------------END--NEW--ORDER---------------")
 
     p.linefeed(5)
@@ -113,6 +113,7 @@ def print_order2(id_, order_list):
     pnc.post_that_order_was_printed(int(id_))
     print("Sending message to server for order id: ", id_)
     time.sleep(5)
+
 
 def print_order3(id_, order_list):
     pnc = PrinterNetCalls()
@@ -126,15 +127,14 @@ def print_order3(id_, order_list):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
-    p.print_text("---START--CHECKOUT-----")
+    p.print_text("---START--CHECKOUT-----", chars_per_line=23)
     print("printing order_id", id_)
     # p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
     for line in lines:
         printer_paper_status(p)
         print("printing line", line[:])
-        p.print_text(line[:]+'\n')
-    # p.print_text("-----------END--CHECKOUT--------")
+        p.print_text(line[:]+'\n', chars_per_line=23)
 
     p.linefeed(5)
 
@@ -156,7 +156,7 @@ if __name__ == '__main__':
         print(order_ids)
         for order_id in order_ids:
             order_list = pnc.get_order3(order_id)
-            print('Order List: ',order_list)
+            print('Order List: ', order_list)
             if order_list is None:
                 pass
             else:
