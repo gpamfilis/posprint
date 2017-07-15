@@ -143,7 +143,6 @@ def print_order3(id_, order_list):
     pnc.post_that_checkout_was_printed(int(checkout_id))
     print("Sending message to server for checkout id: ", id_)
 
-    p.reset()
     time.sleep(5)
 
 
