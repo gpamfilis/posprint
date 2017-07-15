@@ -113,14 +113,14 @@ def print_order3(id_, order_list, p):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
-    p.print_text("---START--CHECKOUT-----", chars_per_line=23)
+    p.print_text("---START--CHECKOUT-----", chars_per_line=27)
     print("printing order_id", id_)
     # p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
     for line in lines:
         printer_paper_status(p)
         print("printing line", line[:])
-        p.print_text(line[:]+'\n', chars_per_line=23)
+        p.print_text(line[:]+'\n', chars_per_line=27)
 
     p.linefeed(5)
 
