@@ -172,6 +172,6 @@ if __name__ == '__main__':
             if checkout_list is None:
                 pass
             else:
-                print_order2(checkout_id, checkout_list)
+                print_order3(checkout_id, checkout_list)
 
         time.sleep(5)
