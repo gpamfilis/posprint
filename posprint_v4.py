@@ -83,16 +83,8 @@ def check_printer_status(p):
             break
 
 
-
-def print_order2(id_, order_list):
+def print_order2(id_, order_list, p):
     pnc = PrinterNetCalls()
-    if len(sys.argv) == 2:
-        serial_port = sys.argv[1]
-    else:
-        serial_port = thermal.ThermalPrinter.SERIALPORT
-    p = thermal.ThermalPrinter(serialport=serial_port)
-
-    # print("Attempting to print ord er_id: ", id_)
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
@@ -115,14 +107,8 @@ def print_order2(id_, order_list):
     time.sleep(5)
 
 
-def print_order3(id_, order_list):
+def print_order3(id_, order_list, p):
     pnc = PrinterNetCalls()
-    if len(sys.argv) == 2:
-        serial_port = sys.argv[1]
-    else:
-        serial_port = thermal.ThermalPrinter.SERIALPORT
-    p = thermal.ThermalPrinter(serialport=serial_port)
-
     print("Attempting to print ord er_id: ", id_)
     lines = order_list
     print("initial paper check")
@@ -148,6 +134,8 @@ def print_order3(id_, order_list):
 
 if __name__ == '__main__':
     pnc = PrinterNetCalls()
+    serial_port = thermal.ThermalPrinter.SERIALPORT
+    p = thermal.ThermalPrinter(serialport=serial_port)
     create = Create()
     while True:
         pnc.check_internet()
@@ -160,7 +148,7 @@ if __name__ == '__main__':
             if order_list is None:
                 pass
             else:
-                print_order2(order_id, order_list)
+                print_order2(order_id, order_list, p=p)
 
         pnc.check_internet()
         print('Checkout Section')
@@ -172,6 +160,6 @@ if __name__ == '__main__':
             if checkout_list is None:
                 pass
             else:
-                print_order3(checkout_id, checkout_list)
+                print_order3(checkout_id, checkout_list, p=p)
 
         time.sleep(5)
