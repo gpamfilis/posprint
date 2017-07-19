@@ -24,6 +24,7 @@ class InternetConnection:
 class PrinterNetCalls(InternetConnection):
     def __init__(self):
         self.base_url = "http://www.e-orders.org"
+        
         # self.base_url = "http://192.168.0.101:5000"
         self.store_id = 3
 
