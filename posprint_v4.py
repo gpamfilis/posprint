@@ -1,8 +1,12 @@
 # coding: utf-8
+import json
+
 import requests
 import sys
 import thermal
 import time
+
+from get_configs import get_configuration
 from network import PrinterNetCalls, InternetConnection
 import sys
 import os
@@ -133,7 +137,10 @@ def print_order3(id_, order_list, p):
 
 
 if __name__ == '__main__':
-    pnc = PrinterNetCalls()
+    get_configuration()
+    with open('values.json') as data_file:
+        data = json.load(data_file)
+    pnc = PrinterNetCalls(**data)
     serial_port = thermal.ThermalPrinter.SERIALPORT
     p = thermal.ThermalPrinter(serialport=serial_port)
     create = Create()

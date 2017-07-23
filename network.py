@@ -14,7 +14,7 @@ class InternetConnection:
             try:
                 req = requests.get("https://www.google.com")
                 status_code = req.status_code
-                if status_code==200:
+                if status_code == 200:
                     break
             except Exception, e:
                 print(e)
@@ -22,11 +22,14 @@ class InternetConnection:
 
 
 class PrinterNetCalls(InternetConnection):
-    def __init__(self):
-        self.base_url = "http://www.e-orders.org"
-        
-        # self.base_url = "http://192.168.0.101:5000"
-        self.store_id = 3
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+                # self.base_url = "http://www.e-orders.org"
+        #
+        # # self.base_url = "http://192.168.0.101:5000"
+        # self.store_id = 3
 
     def get_order(self, order_id):
         print("GET request for order_id = ", order_id)
