@@ -168,7 +168,6 @@ class PrinterNetCalls(InternetConnection):
             try:
                 data = requests.get(self.base_url + "/api/printer/checkout-print?store_id=" + str(self.store_id))
                 json = data.json()["ids"]
-                print(json)
                 break
             except Exception, e:
                 print("The is the get_checkouts_to_print exception", e, e.args, e.message)
