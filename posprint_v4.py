@@ -140,12 +140,12 @@ if __name__ == '__main__':
     get_configuration()
     with open('values.json') as data_file:
         data = json.load(data_file)
-        print(data)
-    pnc = PrinterNetCalls(**data)
-    print(pnc.store_id)
-    serial_port = thermal.ThermalPrinter.SERIALPORT
-    p = thermal.ThermalPrinter(serialport=serial_port)
-    create = Create()
+    print(data)
+    # pnc = PrinterNetCalls(**data)
+    # print(pnc.store_id)
+    # serial_port = thermal.ThermalPrinter.SERIALPORT
+    # p = thermal.ThermalPrinter(serialport=serial_port)
+    # create = Create()
     # while True:
     #     pnc.check_internet()
     #     print('New Order Section')
