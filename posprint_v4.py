@@ -131,7 +131,7 @@ def print_order3(id_, order_list, p):
 
 
 if __name__ == '__main__':
-    # get_configuration()
+    get_configuration()
     with open('values.json') as data_file:
         data = json.load(data_file)
     values = data
