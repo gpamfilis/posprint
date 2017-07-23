@@ -7,7 +7,7 @@ from get_configs import get_configuration
 __author__ = 'gpamfilis'
 
 
-class InternetConnection:
+class InternetConnection(object):
     def __init__(self):
         pass
 
@@ -27,13 +27,8 @@ class InternetConnection:
 
 class PrinterNetCalls(InternetConnection):
     def __init__(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-                # self.base_url = "http://www.e-orders.org"
-        #
-        # # self.base_url = "http://192.168.0.101:5000"
-        # self.store_id = 3
+        self.store_id = kwargs.get('store_id')
+        self.base_url = kwargs.get('base_url')
 
     def get_order(self, order_id):
         print("GET request for order_id = ", order_id)
@@ -220,4 +215,4 @@ if __name__ == '__main__':
     with open('values.json') as data_file:
         data = json.load(data_file)
     order = PrinterNetCalls(**data)
-    print(order.store_id)
+    print(order.get_orders_to_print())
