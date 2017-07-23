@@ -156,9 +156,10 @@ class PrinterNetCalls(InternetConnection):
         while True:
             # self.check_internet()
             try:
+                print(self.store_id,self.base_url)
                 data = requests.get(self.base_url + "/api/printer/checkout-print?store_id=" + str(self.store_id))
                 json = data.json()["ids"]
-                # break
+                break
             except Exception, e:
                 print("The is the get_checkouts_to_print exception", e, e.args, e.message)
         return json
@@ -204,3 +205,5 @@ if __name__ == '__main__':
         data = json.load(data_file)
     order = PrinterNetCalls(**data)
     print(order.get_orders_to_print())
+
+    print(order.check_internet())
