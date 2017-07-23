@@ -220,4 +220,4 @@ if __name__ == '__main__':
     with open('values.json') as data_file:
         data = json.load(data_file)
     order = PrinterNetCalls(**data)
-    print(order)
+    print(order.store_id)
