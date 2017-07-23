@@ -156,7 +156,7 @@ class PrinterNetCalls(InternetConnection):
         while True:
             # self.check_internet()
             try:
-                print(self.store_id,self.base_url)
+                print(self.store_id, self.base_url)
                 data = requests.get(self.base_url + "/api/printer/checkout-print?store_id=" + str(self.store_id))
                 json = data.json()["ids"]
                 break
