@@ -139,13 +139,13 @@ if __name__ == '__main__':
     print(values)
     pnc = PrinterNetCalls(**values)
     print(pnc.store_id)
-    # serial_port = thermal.ThermalPrinter.SERIALPORT
-    # p = thermal.ThermalPrinter(serialport=serial_port)
-    # create = Create()
-    # while True:
-    #     pnc.check_internet()
-    #     print('New Order Section')
-    #     order_ids = pnc.get_orders_to_print()
+    serial_port = thermal.ThermalPrinter.SERIALPORT
+    p = thermal.ThermalPrinter(serialport=serial_port)
+    create = Create()
+    while True:
+        pnc.check_internet()
+        print('New Order Section')
+        order_ids = pnc.get_orders_to_print()
     #     print(order_ids)
     #     for order_id in order_ids:
     #         order_list = pnc.get_order3(order_id)
