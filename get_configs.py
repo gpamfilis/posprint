@@ -2,7 +2,7 @@ import json
 
 
 def get_configuration():
-    f1 = open('/boot/e_orders_config.json', 'r')
+    f1 = open('/boot/e_orders_config.txt', 'r')
     lines = f1.readlines()[0]
     f1.close()
     raw = [l.split('=') for l in lines.split(',')]
