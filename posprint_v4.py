@@ -1,17 +1,16 @@
 # coding: utf-8
-import json
+__author__ = 'gpamfilis'
 
+import json
 import requests
 import sys
 import thermal
 import time
-
 from get_configs import get_configuration
 from network import PrinterNetCalls, InternetConnection
 import sys
 import os
 import greeklish
-__author__ = 'gpamfilis'
 import os
 import shutil
 from utils import Create
@@ -132,7 +131,7 @@ def print_order3(id_, order_list, p):
 
 
 if __name__ == '__main__':
-    get_configuration()
+    # get_configuration()
     with open('values.json') as data_file:
         data = json.load(data_file)
     values = data
@@ -146,25 +145,25 @@ if __name__ == '__main__':
         pnc.check_internet()
         print('New Order Section')
         order_ids = pnc.get_orders_to_print()
-    #     print(order_ids)
-    #     for order_id in order_ids:
-    #         order_list = pnc.get_order3(order_id)
-    #         print('Order List: ', order_list)
-    #         if order_list is None:
-    #             pass
-    #         else:
-    #             print_order2(order_id, order_list, p=p)
-    #
-    #     pnc.check_internet()
-    #     print('Checkout Section')
-    #     checkout_ids = pnc.get_checkouts_to_print()
-    #     print(checkout_ids)
-    #     for checkout_id in checkout_ids:
-    #         checkout_list = pnc.get_checkout2(checkout_id)
-    #         print('checkout list: ', checkout_list)
-    #         if checkout_list is None:
-    #             pass
-    #         else:
-    #             print_order3(checkout_id, checkout_list, p=p)
-    #
-    #     time.sleep(5)
+        print(order_ids)
+        for order_id in order_ids:
+            order_list = pnc.get_order3(order_id)
+            print('Order List: ', order_list)
+            if order_list is None:
+                pass
+            else:
+                print_order2(order_id, order_list, p=p)
+
+        pnc.check_internet()
+        print('Checkout Section')
+        checkout_ids = pnc.get_checkouts_to_print()
+        print(checkout_ids)
+        for checkout_id in checkout_ids:
+            checkout_list = pnc.get_checkout2(checkout_id)
+            print('checkout list: ', checkout_list)
+            if checkout_list is None:
+                pass
+            else:
+                print_order3(checkout_id, checkout_list, p=p)
+
+        time.sleep(5)
