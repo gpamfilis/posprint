@@ -81,8 +81,7 @@ def check_printer_status(p):
             break
 
 
-def print_order2(id_, order_list, p):
-    pnc = PrinterNetCalls()
+def print_order2(id_, order_list, p, pnc):
     lines = order_list
     print("initial paper check")
     printer_paper_status(p)
@@ -105,8 +104,7 @@ def print_order2(id_, order_list, p):
     time.sleep(5)
 
 
-def print_order3(id_, order_list, p):
-    pnc = PrinterNetCalls()
+def print_order3(id_, order_list, p, pnc):
     print("Attempting to print ord er_id: ", id_)
     lines = order_list
     print("initial paper check")
@@ -150,7 +148,7 @@ if __name__ == '__main__':
             if order_list is None:
                 pass
             else:
-                print_order2(order_id, order_list, p=p)
+                print_order2(order_id, order_list, p=p, pnc=pnc )
 
         pnc.check_internet()
         print('Checkout Section')
@@ -162,6 +160,6 @@ if __name__ == '__main__':
             if checkout_list is None:
                 pass
             else:
-                print_order3(checkout_id, checkout_list, p=p)
+                print_order3(checkout_id, checkout_list, p=p, pnc=pnc)
 
         time.sleep(5)
