@@ -124,7 +124,7 @@ def print_order3(id_, order_list, p):
 
     check_printer_status(p)
 
-    pnc.post_that_checkout_was_printed(int(checkout_id))
+    pnc.post_that_checkout_was_printed(int(id_))
     print("Sending message to server for checkout id: ", id_)
 
     time.sleep(5)
@@ -135,9 +135,7 @@ if __name__ == '__main__':
     with open('values.json') as data_file:
         data = json.load(data_file)
     values = data
-    print(values)
     pnc = PrinterNetCalls(**values)
-    print(pnc.store_id)
     serial_port = thermal.ThermalPrinter.SERIALPORT
     p = thermal.ThermalPrinter(serialport=serial_port)
     create = Create()
