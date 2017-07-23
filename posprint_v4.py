@@ -137,8 +137,8 @@ if __name__ == '__main__':
         data = json.load(data_file)
     values = data
     print(values)
-    # pnc = PrinterNetCalls(**values)
-    # print(pnc.store_id)
+    pnc = PrinterNetCalls(**values)
+    print(pnc.store_id)
     # serial_port = thermal.ThermalPrinter.SERIALPORT
     # p = thermal.ThermalPrinter(serialport=serial_port)
     # create = Create()

@@ -8,8 +8,6 @@ __author__ = 'gpamfilis'
 
 
 class InternetConnection(object):
-    def __init__(self):
-        pass
 
     def check_internet(self):
         status_code = 0
