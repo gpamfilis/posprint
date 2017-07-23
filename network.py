@@ -1,4 +1,8 @@
+import json
+
 import requests
+
+from get_configs import get_configuration
 
 __author__ = 'gpamfilis'
 
@@ -212,5 +216,8 @@ class PrinterNetCalls(InternetConnection):
 
 
 if __name__ == '__main__':
-    order = PrinterNetCalls().get_order(10)
+    get_configuration()
+    with open('values.json') as data_file:
+        data = json.load(data_file)
+    order = PrinterNetCalls(**data)
     print(order)
