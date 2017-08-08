@@ -90,7 +90,10 @@ def print_order2(id_, order_list, p, pnc):
     p.print_text("-------START--NEW--ORDER-------")
     p.print_text("\n")
     for line in lines:
-        printer_paper_status(p)
+        try:
+            printer_paper_status(p)
+        except Exception as e:
+            print(e)
         print("printing line", line[:])
         p.print_text(line[:]+'\n', chars_per_line=23)
     # p.print_text("-------------END--NEW--ORDER---------------")
@@ -114,7 +117,11 @@ def print_order3(id_, order_list, p, pnc):
     # p.print_text("---CHECKOUT----!!")
     p.print_text("\n")
     for line in lines:
-        printer_paper_status(p)
+        try:
+            printer_paper_status(p)
+        except Exception as e:
+            print(e)
+
         print("printing line", line[:])
         p.print_text(line[:]+'\n', chars_per_line=27)
 
