@@ -15,6 +15,6 @@ class BasicsTestCase(unittest.TestCase):
         status_code = InternetConnection().check_internet()
         self.assertTrue(status_code == 200)
 
-    def test_create_deltio(self):
-        create_deltio(1)
-        self.assertTrue(True == False)
+    # def test_create_deltio(self):
+    #     create_deltio(1)
+    #     self.assertTrue(True == False)

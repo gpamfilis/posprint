@@ -125,7 +125,7 @@ def print_order3(id_, order_list, p, pnc):
         print("printing line", line[:])
         p.print_text(line[:]+'\n', chars_per_line=27)
 
-    p.linefeed(5)
+    p.linefeed(10)
 
     check_printer_status(p)
 
